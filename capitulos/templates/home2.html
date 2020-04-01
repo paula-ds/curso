@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Capítulo {{info2.id}}</title>
+		<meta charset="utf-8">
+	</head>
+	<body>
+		<h1>Capítulo </h1>
+		
+		<ul>
+			<li>Nombre: {{info2.name}}</li>
+			<li>Código:{{info2.código}}</li>
+            <li>Fecha de emisión:{{info2.fecha}}</li>
+            <li>Personajes
+                <ul>
+                {% for personaje in info2.caracteres %}
+                    <li>
+                    <a href="../caracter/{{personaje.id}}">"{{personaje.name}}"</a>
+                    </li>
+                {%endfor%}
+                </ul>
+            </li>
+        </ul>
+        <form method="get">
+            Buscador:
+            <input type="text" class="form-control" name="buscar" required/>
+            <span class="input-group-list">
+                <i class="icon icon-search"></i>
+                <button type="submit" class="boton btn-success">Buscar</button>
+            </span>
+        </form>
+	</body>
+    </html>

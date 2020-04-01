@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title> {{info3.name}}</title>
+		<meta charset="utf-8">
+	</head>
+	<body>
+		<h1>Personaje </h1>
+		<img src={{info3.imagen}}>
+		<ul>
+			<li>Nombre: {{info3.name}}</li>
+			<li>Estado: {{info3.estado}}</li>
+            <li>Especie: {{info3.especie}}</li>
+            <li>Tipo: {{info3.tipo}}</li>
+            <li>Género: {{info3.genero}}</li>
+            <li>Ubicación de origen:
+                <a href="../../location/{{info3.lugar_origen.id}}"> {{info3.lugar_origen.name}}</a>
+            </li>
+            <li>Última ubicación conocida: 
+                <a href="../../location/{{info3.ultima_l.id}}"> {{info3.ultima_l.name}}</a>
+            </li>
+            <li>Episodios
+                <ul>
+                {% for episodio in info3.episodios %}
+                    <li>
+                    <a href="../../{{episodio.id}}">"{{episodio.name}}"</a>
+                    </li>
+                {%endfor%}
+                </ul>
+            </li>
+        </ul>
+        <form method="get">
+            Buscador:
+            <input type="text" class="form-control" name="buscar" required/>
+            <span class="input-group-list">
+                <i class="icon icon-search"></i>
+                <button type="submit" class="boton btn-success">Buscar</button>
+            </span>            
+        </form>
+	</body>
+    </html>

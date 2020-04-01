@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title> {{info4.name}}</title>
+		<meta charset="utf-8">
+	</head>
+	<body>
+		<h1> Lugar </h1>
+
+		<ul>
+			<li>Nombre: {{info4.name}}</li>
+            <li>Tipo: {{info4.tipo}}</li>
+            <li>Dimensión: {{info4.dimension}}</li>
+            <li> Personajes
+                <ul>
+                {% for personaje in info4.gente %}
+                    <li>
+                    <a href="../../caracter/{{personaje.id}}">"{{personaje.name}}"</a>
+                    </li>
+                {%endfor%}
+                </ul>
+            </li>
+        </ul>
+        <form method="get">
+            Buscador:
+            <input type="text" class="form-control" name="buscar" required/>
+            <span class="input-group-list">
+                <i class="icon icon-search"></i>
+                <button type="submit" class="boton btn-success">Buscar</button>
+            </span>      
+        </form>
+	</body>
+    </html>

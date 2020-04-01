@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title> Rick and Morty</title>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <h1>Capítulos de Rick and Morty</h1>
+        <ul>
+
+                {% for capitulo in informacion %}
+                    <li>
+                        <a href="{{capitulo.id}}">"{{ capitulo.name}}"</a>
+                        <small> {{capitulo.info}}</small>
+                    </li>
+                {%endfor%}
+
+        </ul>
+        <form method="get">
+            Buscador:
+            <input type="text" class="form-control" name="buscar" required/>
+            <span class="input-group-list">
+                <i class="icon icon-search"></i>
+                <button type="submit" class="boton btn-success">Buscar</button>
+            </span>
+        </form>
+    </body>
+</html>
+
+
