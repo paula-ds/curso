@@ -18,7 +18,7 @@ def hello_world(request):
     if response.status_code == 200:
         response_json = response.json()
         for episodio in response_json['results']:  
-            todo.append({"id":episodio["id"],"name":episodio["name"],"info": "Fecha de emisión: " +episodio["name"]+ " , Fecha de emisión: " + episodio["air_date"] + " , Código: " + episodio["episode"]})
+            todo.append({"id":episodio["id"],"name":episodio["name"],"info": "Fecha de emisión: " +episodio["aid_date"]+ " , Código: " + episodio["episode"]})
             
     #ordenar lista por id 
     todo= sorted(todo, key = lambda i: i['id']) 
